@@ -1,0 +1,5 @@
+header{min-height: 8vh}
+main{min-height: 80vh; background-color: blueviolet;}
+footer{min-height: 10vh;}
+.carousel-item{height: 25vh;}
+.lupa{width: 6vh;}

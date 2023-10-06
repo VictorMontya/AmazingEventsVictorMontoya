@@ -1,5 +1,5 @@
 header{min-height: 8vh}
-main{min-height: 80vh; background-color: blueviolet;}
-footer{min-height: 10vh;}
+main{min-height: 88vh; background-color: blueviolet;}
+footer{min-height: 8vh;}
 .carousel-item{height: 25vh;}
-.lupa{width: 6vh;}
+.pie{margin-right: 1em; margin-top: 0.8em; margin-bottom: auto;}

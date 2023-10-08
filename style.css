@@ -1,5 +1,8 @@
 header{min-height: 8vh}
-main{min-height: 88vh; background-color: blueviolet;}
+main{min-height: 88vh; 
+    background-image: url(/Recursos_Amazing_Events_Task_1/water-839590_640.jpg);
+    background-repeat: no-repeat; background-size: cover;}
 footer{min-height: 8vh;}
 .carousel-item{height: 25vh;}
 .pie{margin-right: 1em; margin-top: 0.8em; margin-bottom: auto;}
+

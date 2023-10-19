@@ -26,9 +26,9 @@ for (let event of upComing) {
 
         caja.innerHTML = `<img src="${event.image}" class="card-img-top tamaño" alt="">
 <div class="card-body">
-  <h5 class="card-title">"${event.name}"</h5>
-  <p class="card-text">"${event.description}"</p>
-  <p class="text-start d-flex position-absolute">"Price: ${event.price} "</p>
+  <h5 class="card-title">${event.name}</h5>
+  <p class="card-text">${event.description}</p>
+  <p class="text-start d-flex position-absolute">Price: ${event.price} </p>
   <div class="d-flex justify-content-end">
     <a href="Details.html" class="btn btn-primary  ">Details</a>
   </div>

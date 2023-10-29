@@ -10,5 +10,7 @@ footer{min-height: 8vh;}
 .titulo{font-size: 4em}
 .logo{height: 2em;}
 .piePagina{background-color: blue;}
+.borde{border: solid; border-radius: 5%;}
+.centrado{display: flex; justify-content: center;}
 
 @media only screen and (max-width: 770px){footer{min-height: 16vh;}}

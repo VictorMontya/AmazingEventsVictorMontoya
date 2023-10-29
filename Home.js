@@ -14,7 +14,7 @@ for (let event of arrayEevent) {
   <p class="card-text">${event.description}</p>
   <p class="text-start d-flex position-absolute">Price: ${event.price} </p>
   <div class="d-flex justify-content-end">
-    <a href="Details.html" class="btn btn-primary  ">Details</a>
+    <a href="./details.html?_id=${event._id}" class="btn btn-primary  ">Details</a>
   </div>
 `
 

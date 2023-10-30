@@ -2,7 +2,54 @@
 const informacion = document.getElementById("Contenedor")
 const arrayEevent = data.events
 
+const formContenedor = document.getElementById("form")
+let arrayCategory = []
 
+arrayCategory= Array.from(new Set (arrayEevent.map(events => events.category.replace(" ", "-"))))
+
+
+function checkBox(tipoEvento) {
+  arrayCategory.forEach(category =>{
+  let barraCheckbox = document.createElement("div")
+  barraCheckbox.classList.add("form-check")
+
+  barraCheckbox.innerHTML = `<div class="form-check form-check-inline fs-5 mt-1">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="${category}">
+        <label class="form-check-label " for="${category}">${category.replace("-"," ")}</label>
+      </div>`
+      formContenedor.appendChild(barraCheckbox)
+  } )
+  
+} checkBox(arrayCategory)
+
+formContenedor.addEventListener('change',() => {
+  
+  let categoryEscogida = filtrarCategory(arrayEevent)
+  
+  crearCard(categoryEscogida)
+  
+} )
+
+function filtrarCategory(arrayEevent){
+  let selet = Array.from( document.querySelectorAll('input[type="checkBox"]:checked')).map(checkBox =>checkBox.value)
+ let categoryFilter = []
+ arrayEevent.forEach(categoria => {selet.forEach(tipos => { if (tipos == categoria.category.replace(" ","-")) {
+  categoryFilter.push(categoria)
+ }  
+}) }
+  )
+  if (categoryFilter.length == 0) {categoryFilter.push(arrayEevent)
+    
+  }
+  console.log(categoryFilter)
+ return categoryFilter
+} 
+
+
+
+
+function crearCard(event){
+  informacion.innerHTML = " ";
 for (let event of arrayEevent) {
   const caja = document.createElement("div")
   caja.classList.add("card")
@@ -20,5 +67,6 @@ for (let event of arrayEevent) {
 
   informacion.appendChild(caja)
 
-}
+}}
+crearCard(informacion)
 

@@ -1,6 +1,8 @@
 const urlDetails = new URLSearchParams(window.location.search)
 const id = urlDetails.get("_id")
 
+import { data } from "./modules/Data.js"
+
 const eventos = data.events
 
 let eventoBuscado = eventos.find(eventos => eventos._id == id)

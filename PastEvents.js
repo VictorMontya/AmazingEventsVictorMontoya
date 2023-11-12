@@ -1,7 +1,8 @@
-const informacion = document.getElementById("Contenedor")
+
+import { data } from "./modules/Data.js";
+import { informacion, checkBox,formContenedor, buscador, superFiltro } from "./modules/funciones.js";
+
 const arrayEevent = data.events
-
-
 
 const fechaActual = parseInt(data.currentDate)
 let upComing=[]
@@ -11,9 +12,14 @@ for (let longitud = 0; longitud < 14; longitud++) {
   if (fechaActual > fechaEvents) {upComing.push(data.events[longitud])
   
   }
-}console.log(upComing)
+}
 
+let arrayCategory = [];
+let arrayActiividad = [];
 
+arrayCategory = Array.from(new Set(upComing.map(events => events.category.replace(" ", "-"))))
+
+checkBox(arrayCategory)
 
 for (let event of upComing) { 
 
@@ -38,3 +44,15 @@ for (let event of upComing) {
 
     }
 } 
+
+
+formContenedor.addEventListener('change', () => {
+
+  superFiltro(upComing)
+})
+
+buscador.addEventListener('keyup', () => {
+  
+  superFiltro(upComing)
+
+  })
